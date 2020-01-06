@@ -1,14 +1,15 @@
-def prime(x):
-    for i in range(2,(x//2)):
-        if x%i==0:
-            return 0
-    return x
+def prime(num):
+    for i in range(2,int(num**(1/2))):
+        if num%i==0:
+            return False
+    return True
 
-def lpf(y):
-    for j in range(y//2,2,-1):
-        if prime(j)==j:
-            if y%j==0:
-                return j
-    return 0
+def fermat(num):
+    for y in range(1,num//2):
+        x = (num + y**2)**(1/2)
+        if x.is_integer():
+            if prime(x-y):
+                return (x-y)
+    return False
 
-print(lpf(13195))
+print(fermat(600851475143))
