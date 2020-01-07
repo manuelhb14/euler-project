@@ -7,7 +7,7 @@ def smallest_mult (x,y):
             i+=1
             divisible = True
         if start%i!=0:
-            start+=10
+            start+=y
             divisible = False
     return start
 
